@@ -1,7 +1,7 @@
 # Quoridor Engine
 
 ## About
-An engine simulating the board game `Quoridor` on the command line </br>
+An engine made in c simulating the board game `Quoridor` on the command line </br>
 How to play: see available commands on `Commands/Quoridor Text Protocol` </br>
 
 ### About AI Agent
