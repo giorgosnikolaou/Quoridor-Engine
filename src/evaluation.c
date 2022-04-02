@@ -33,11 +33,6 @@ int evaluate(Board board)
 
     if (maximizing == 'W')
     {
-        // Early game just go towards goal
-        if (vector_size(board->history) <= board->dimension)
-            return -w;
-        
-        // Mid/end game, take into account enemy distance to goal
         sum -= w;
         sum += b;
 
@@ -52,9 +47,6 @@ int evaluate(Board board)
     }
     else
     {
-        if (vector_size(board->history) <= board->dimension)
-            return -b;
-
         sum -= b;
         sum += w;
 
