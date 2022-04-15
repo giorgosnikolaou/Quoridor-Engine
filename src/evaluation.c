@@ -4,11 +4,8 @@
 #include "moves.h"
 
 static uint32_t abs_value(int value)
-{
-    if (value < 0)
-        return -value;
-    
-    return value;
+{    
+    return value > 0 ? value : -value;
 }
 
 extern char maximizing;
