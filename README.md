@@ -18,7 +18,7 @@ As the game progresses and the branching factor decreases the depth the agent ca
 Sorts wall placements by distance to the enemy. The furthest away a wall is from the enemy the more likely it is that it's a bad wall to place </br>
 
 Possible improvements of the agent:
-* Sort player moves by the one that will get it closer to its goal
+* Sort player moves by sortest distance to its goal
 * Sort wall placements by `min{distance from minimizing agent, distance from maximizing agent}`.
     This will make walls that will support the maximizing agent be considered earlier
     Possible a mid to late game improvement
