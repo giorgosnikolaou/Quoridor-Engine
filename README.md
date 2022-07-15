@@ -12,7 +12,7 @@ The evaluation function has the following 4 features:
 * Penalty if the minimizing agent is very close to the goal 
 * Penalty if the maximizing agent has fewer walls than minimizing agent
 
-Uses iterative deepening to get the most depth in a given fixed move time (4 seconds) </br>
+Uses iterative deepening to get the most depth in a given fixed move time (4.5 seconds) </br>
 As the game progresses and the branching factor decreases the depth the agent can see ahead increases </br>
 
 Sorts wall placements by distance to the enemy. The furthest away a wall is from the enemy the more likely it is that it's a bad wall to place </br>
