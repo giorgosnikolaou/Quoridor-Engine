@@ -4,8 +4,11 @@
 #include "moves.h"
 
 static uint32_t abs_value(int value)
-{    
-    return value > 0 ? value : -value;
+{
+    if (value < 0)
+        return -value;
+    
+    return value;
 }
 
 extern char maximizing;
@@ -30,12 +33,13 @@ int evaluate(Board board)
 
     if (maximizing == 'W')
     {
+        // Take into account enemy distance to goal
         sum -= w;
         sum += b;
 
         // If enemy very close to goal give a little penalty
-        if (board->enemy.i + 3 >= board->dimension)
-            sum -= (board->enemy.i + 3 - board->dimension);
+        if (b <= 3)
+            sum -= (4 - b);
 
         // Having much less walls than the enemy is a very disadvantageous position
         if (board->enemy_walls > board->player_walls)
@@ -47,15 +51,13 @@ int evaluate(Board board)
         sum -= b;
         sum += w;
 
-        if (board->player.i <= 3)
-            sum -= board->player.i;
+        if (w <= 3)
+            sum -= (4 - w);
             
         if (board->player_walls > board->enemy_walls)
             sum -= (board->player_walls - board->enemy_walls) >> 1;
     }
 
-    // if (board->player_walls + board->enemy_walls <= board->walls)
-    //     sum -= (abs_value(board->player.i - board->enemy.i) + abs_value(board->player.j - board->enemy.j)) >> 2;
 
     return sum;
 }

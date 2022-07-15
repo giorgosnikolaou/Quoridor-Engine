@@ -70,7 +70,6 @@ ListNode list_next(ListNode node)
     return (node != NULL) ? node->next : NULL;
 }
 
-
 // Inserts node
 void list_insert_next(List list, ListNode node, Pointer value) 
 {
@@ -115,7 +114,6 @@ void list_insert_next(List list, ListNode node, Pointer value)
 
 
 }
-
 
 // Removes the first node
 void list_remove(List list) 

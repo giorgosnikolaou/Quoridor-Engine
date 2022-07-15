@@ -677,9 +677,10 @@ static void engine_genmove(Engine engine, char player)
     maximizing = player;
     minimizing = (player == 'B') ? 'W' : 'B';
 
-    time_left = 4.0;
+    time_left = 4.5;
     uint32_t depth = 1;
-    uint32_t max_depth = engine->board->dimension << 2;
+    uint32_t max_depth = 5;
+    // uint32_t max_depth = engine->board->dimension << 2;
 
     Vector moves = vector_create(10, free);
 
@@ -712,6 +713,9 @@ static void engine_genmove(Engine engine, char player)
         time_left -= accum;
 
         depth++;
+
+        if (accum >= time_left)
+            break;
     }
 
 

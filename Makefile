@@ -4,17 +4,16 @@ CC = gcc
 # Paths
 INCLUDE = ./include
 SRC = ./src
-MAIN = ./program
 
 # Defines 
 DEFINES = 
 
 # Compile options
-CFLAGS = -Wall -O3 $(DEFINES) -I$(INCLUDE)
+CFLAGS = -Wall -g3 $(DEFINES) -I$(INCLUDE)
 
 # .o files needed
 SRCS    := $(wildcard $(SRC)/*.c)
-OBJS    := $(patsubst $(SRC)/%.c,$(SRC)/%.o,$(SRCS)) $(MAIN)/main.o
+OBJS    := $(patsubst $(SRC)/%.c,$(SRC)/%.o,$(SRCS))
 
 # Executable
 EXEC = main

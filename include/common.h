@@ -7,7 +7,6 @@
 #define INFINITY 999999
 #define BILLION 1E9
 
-
 typedef uint8_t** Cells;
 
 typedef enum

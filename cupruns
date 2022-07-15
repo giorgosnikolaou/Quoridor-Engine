@@ -1,0 +1,25 @@
+# Get the engine we want to run every other one against
+# If argument was not given, take the default path
+default_engine="./main"
+default=$([[ $# -eq 0 ]] && echo ${default_engine} || echo "$1")
+
+if [ "$default" = "./main" ]
+then
+	make
+fi
+
+
+for e in CupProgs/*
+do
+	enemy=$(basename "$e")
+	size="${enemy##*.}"
+	./quoridor_referee.py --white "$e" --black "$default" --size "$size" --seed 2022 --memory_limit 4096 --verbose 0 --games 1
+	./quoridor_referee.py --white "$default" --black "$e" --size "$size" --seed 2022 --memory_limit 4096 --verbose 0 --games 1
+done
+
+if [ "$default" = "./main" ]
+then
+	make clean
+fi
+
+rm -f ./last_game.sh

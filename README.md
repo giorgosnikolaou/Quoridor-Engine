@@ -189,5 +189,5 @@ Possible quoridor_referee options:
   --seed <seed>                     (default current unix timestamp)
 ```
 
-For more agents to play against see [here](https://lists.di.uoa.gr/showpost.php?p=93145&postcount=22) (in greek)
+Engines on folder `CupProgs` are mostly from see [here](https://lists.di.uoa.gr/showpost.php?p=93145&postcount=22) (in greek)
 
